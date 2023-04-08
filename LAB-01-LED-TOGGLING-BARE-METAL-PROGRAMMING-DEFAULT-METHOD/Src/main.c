@@ -82,8 +82,10 @@ int main(void){
 
    while(1)
     {
-		/* Set PA5 high*/
-	   *(volatile unsigned int*)(GPIO_START + (GPIO_PORT_OFFSET*GPIO_A) + GPIO_ODR) |= (1UL << GPIO_PIN_5);
+	   for(int i = 0; i < 1000000; i++)
+	   {}
+		/* Set PA5 in toggle state for 1 second */
+	   *(volatile unsigned int*)(GPIO_START + (GPIO_PORT_OFFSET*GPIO_A) + GPIO_ODR) ^= (1UL << GPIO_PIN_5);
     }
 
 }
