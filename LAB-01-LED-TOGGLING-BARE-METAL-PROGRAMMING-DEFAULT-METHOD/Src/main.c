@@ -71,19 +71,19 @@
 int main(void){
 
 	/* Enable port clock, through RCC_APB2ENR register */
-    *(uint32_t*)(RCC_START + RCC_APB2EN) |= ((1UL) << (GPIO_A+2));
+    (*(volatile unsigned int*)(RCC_START + RCC_APB2EN) |= ((1UL) << (GPIO_A+2)));
 
 	/* Configuring GPIO_CRL register */
 	/* Zero out the 4 pin configuration bits */
-	*(uint32_t*)(GPIO_START + (GPIO_PORT_OFFSET*port) + GPIO_CRL) &= ~((0xF) << (GPIO_PIN_5*4));
+    (*(volatile unsigned int*)(GPIO_START + (GPIO_PORT_OFFSET*GPIO_A) + GPIO_CRL) &= ~((0xF) << (GPIO_PIN_5*4)));
 
 	/* Set the 4 bit value for pin configuration in register */
-	*(uint32_t*)(GPIO_START + (GPIO_PORT_OFFSET*port) + GPIO_CRL) |= (((GPIO_PP_OUT_CFG*4)+GPIO_OUT_MODE_MAX_2MHZ) << (GPIO_PIN_5*4));
+    (*(volatile unsigned int*)(GPIO_START + (GPIO_PORT_OFFSET*GPIO_A) + GPIO_CRL) |= (((GPIO_PP_OUT_CFG*4)+GPIO_OUT_MODE_MAX_2MHZ) << (GPIO_PIN_5*4)));
 
    while(1)
     {
 		/* Set PA5 high*/
-		*(uint32_t*)(GPIO_START + (GPIO_PORT_OFFSET*GPIO_A) + GPIO_ODR) |= (1UL << GPIO_PIN_5);
+	   *(volatile unsigned int*)(GPIO_START + (GPIO_PORT_OFFSET*GPIO_A) + GPIO_ODR) |= (1UL << GPIO_PIN_5);
     }
 
 }
