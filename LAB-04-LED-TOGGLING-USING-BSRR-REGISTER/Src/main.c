@@ -11,8 +11,8 @@
 #define GPIOAEN               (1U << 2)
 
 /* Enabling the bits of BSRR Registers */
-#define BIT_SET_PIN_5         (1U << 5)  //  Enable the BS5 Pin for turn ON LED
-#define BIT_RESET_PIN_5       (1U << 21) //  Enable the BR5 Pin for turn OFF LED
+#define BIT_SET_PIN_5         (1U << 5)  //  Enable the BR5 Pin for turn ON LED
+#define BIT_RESET_PIN_5       (1U << 21) //  Enable the BS5 Pin for turn OFF LED
 
 /* Defining Pin for GPIO Mode Register */
 #define GPIOA_PIN5_MODE_REG        (20)
