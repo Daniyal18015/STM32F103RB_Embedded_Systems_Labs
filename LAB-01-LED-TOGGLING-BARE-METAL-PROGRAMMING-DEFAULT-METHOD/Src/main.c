@@ -6,7 +6,7 @@
 
 /* RCC */
 #define RCC_START			    (0x40021000)
-#define RCC_APB2EN			    (0x18)
+#define RCC_APB2EN			           (0x18)
 
 /* GPIO Start Address */
 #define GPIO_START			    (0x40010800)
