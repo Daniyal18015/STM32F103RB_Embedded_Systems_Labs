@@ -1,5 +1,5 @@
 #include <stdint.h>
-#include <stdio.h>
+
           /*------ Including STM32F103RB and other Header File ------*/
 #include "stm32f103xb.h"
 
@@ -33,11 +33,7 @@ static void UART_Set_BaudRate(USART_TypeDef *USARTTx, uint32_t Peripheral_CLK, u
 // Function to write a character for transmission
 void UART2_Write(int charecter);
 
-int __io_putchar(int ch)
-{
-	UART2_Write(ch);
-	return ch;
-}
+
 
 
 int main(void)
@@ -46,7 +42,7 @@ int main(void)
 
 	while(1)
 	{
-		printf("Hello From STM32F103RB.......\n\r");
+		UART2_Write('D');
 	}
 }
 
