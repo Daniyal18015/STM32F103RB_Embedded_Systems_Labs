@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	UART2_TX_Iint();
+	UART2_TX_Init();
 
 	while(1)
 	{

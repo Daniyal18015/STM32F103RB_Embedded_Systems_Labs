@@ -8,7 +8,10 @@
 #include "stm32f103xb.h"
 
          /*------ Function Prototype to Initiate UART Transmission mode ------*/
-void UART2_TX_Iint(void);
+void UART2_TX_Init(void);
+
+
+
 
 
 

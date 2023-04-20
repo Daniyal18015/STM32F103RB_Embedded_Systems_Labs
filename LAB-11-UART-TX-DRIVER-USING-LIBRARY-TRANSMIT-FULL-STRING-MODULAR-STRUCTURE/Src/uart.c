@@ -19,7 +19,7 @@
                        /*------ UART FUNCTIONS PROTOTYPES ------*/
 
 // Function to initialize USART2_TX
-void UART2_TX_Iint(void);
+void UART2_TX_Init(void);
 
 // Function to computer UART Division
 static  uint16_t Compute_UART_Div(uint32_t Peripheral_CLK, uint32_t BaudRate);
@@ -37,7 +37,7 @@ int __io_putchar(int ch)
 	return ch;
 }
 
-void UART2_TX_Iint(void)
+void UART2_TX_Init(void)
 {
             /*------ Configure UART GPIO PIN ------*/
 // ENABLE CLOCK ACCESS TO GPIO_A
